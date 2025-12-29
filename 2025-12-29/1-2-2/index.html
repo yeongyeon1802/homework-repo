@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1-2-2</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      //비어있는 배열 선언
+      const cart = [];
+
+      //목록 추가
+      cart.push({ name: "사과", price: 1800 });
+      cart.push({ name: "배", price: 1500 });
+      cart.push({ name: "귤", price: 1200 });
+      cart.push({ name: "딸기", price: 2000 });
+
+      //스프레드 문법으로 얕은 복사하기
+      const itemList = [...cart];
+
+      //상품 목록과 가격을 저장할 함수 선언
+      function totalItem(items) {
+        return items.map((item) => `${item.name}(${item.price}원)`).join(", ");
+      }
+
+      //1차 결과 출력(현재 저장된 목록)
+      console.log(totalItem(itemList));
+
+      //특정 상품 삭제하기
+      const removeIndex = itemList.findIndex((item) => item.name === "배");
+      //인덱스 넘버가 -1이 아니다, 즉 찾는 인덱스가 있을경우, 해당 부분 삭제
+      if (removeIndex !== -1) itemList.splice(removeIndex, 1);
+
+      //2차 결과 출력(삭제 후 저장된 목록)
+      console.log(totalItem(itemList));
+
+      //가격을 비교하여 오름차순으로 정렬하기
+      itemList.sort((a, b) => a.price - b.price);
+
+      //3차 결과 출력(가격별 오름차순 정렬 후 목록)
+      console.log(totalItem(itemList));
+    </script>
+  </body>
+</html>
