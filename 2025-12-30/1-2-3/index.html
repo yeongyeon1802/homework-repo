@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1-2-2</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      //객체 생성
+      const student = {
+        name: "이영연",
+        age: 27,
+        scores: { math: 90, english: 85 },
+      };
+
+      //JSON으로 깊은 복사
+      const deepCopy = JSON.parse(JSON.stringify(student));
+
+      //복사한 배열 점수 변경 --> 원본에는 영향 X
+      deepCopy.scores.math = 100;
+      deepCopy.scores.english = 50;
+
+      //동적 속성 접근 함수 선언
+      function getProperty(obj, key) {
+        return obj[key];
+      }
+
+      //함수 결과를 저장할 변수 선언
+      const myName = getProperty(student, "name");
+
+      //나눗셈을 구하는 함수 선언
+      function average() {
+        //합계와 반복횟수를 저장할 변수 선언 후 초기화
+        let count = 0,
+          sum = 0;
+
+        //Object.entries 를 사용해 scores의 값만 추출
+        for (const [key, value] of Object.entries(student.scores)) {
+          sum += value;
+          count++;
+        }
+
+        // 평균 반환
+        return sum / count;
+      }
+
+      //첫번째 결과: 이름 출력
+      console.log(`1.동적 접근: "${myName}"`);
+      //두번째 결과: 점수 평균 출력
+      console.log(`2.평균 점수: ${average()}점`);
+      //세번째 결과: 원본 상태 확인
+      console.log(student);
+      //번외: 복사한 객체 상태 확인
+      console.log(deepCopy);
+    </script>
+  </body>
+</html>
