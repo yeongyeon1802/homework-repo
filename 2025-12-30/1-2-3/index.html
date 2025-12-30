@@ -37,8 +37,8 @@
         let count = 0,
           sum = 0;
 
-        //Object.entries 를 사용해 scores의 값만 추출
-        for (const [key, value] of Object.entries(student.scores)) {
+        //Object.values 를 사용해 scores의 값만 추출
+        for (const value of Object.values(student.scores)) {
           sum += value;
           count++;
         }
