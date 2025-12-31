@@ -32,13 +32,13 @@
       const myName = getProperty(student, "name");
 
       //나눗셈을 구하는 함수 선언
-      function average() {
+      function average(obj) {
         //합계와 반복횟수를 저장할 변수 선언 후 초기화
         let count = 0,
           sum = 0;
 
         //Object.values 를 사용해 scores의 값만 추출
-        for (const value of Object.values(student.scores)) {
+        for (const value of Object.values(obj.scores)) {
           sum += value;
           count++;
         }
@@ -50,7 +50,7 @@
       //첫번째 결과: 이름 출력
       console.log(`1.동적 접근: "${myName}"`); //1.동적 접근: "이영연"
       //두번째 결과: 점수 평균 출력
-      console.log(`2.평균 점수: ${average()}점`); //2.평균 점수: 87.5점
+      console.log(`2.평균 점수: ${average(student)}점`); //2.평균 점수: 87.5점
       //세번째 결과: 원본 상태 확인
       console.log(student); // name: "이영연", age: 27, scores: { math: 90, english: 85 }
       //번외: 복사한 객체 상태 확인
