@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1-5-2</title>
+  </head>
+  <body>
+    <script>
+      console.log("1. 가게 오픈");
+
+      setTimeout(() => {
+        console.log("2. 일반 손님 주문 완료");
+      }, 0);
+
+      Promise.resolve().then(() => {
+        console.log("3. VIP 손님 입장");
+      });
+
+      console.log("4. 재료 준비");
+
+      //1. 출력 순서: 1 -> 4 -> 3 -> 2
+      //2. 실행 순서는 동기 코드 > 동기 코드 실행 후 마이크로태스크 > 마이크로테스크가 전부 비워지면 매크로테스크 순서이다.
+      //2. VIP는 마이크로테스트, 일반 손님은 매크로테스크 이기 때문에 VIP가 먼저 나온다.
+      //3. 1-> 4 -> 3 출력하고 1초 후 2 가 나온다.
+      //3. 어짜피 매크로테스크는 순서가 제일 늦기 때문에 1초를 기다리게 하면 확실한 꼴찌로 만드는 것이다.
+    </script>
+  </body>
+</html>
