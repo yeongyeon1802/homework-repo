@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1-5-3</title>
+  </head>
+  <body>
+    <script>
+      const orderPizza = (name) =>
+        new Promise((resolve) => {
+          setTimeout(() => resolve(name), 1000);
+        });
+
+      const makeDough = (orderId) =>
+        new Promise((resolve) => {
+          setTimeout(() => resolve({ dough: true }), 1000);
+        });
+
+      const bakePizza = (dough) =>
+        new Promise((resolve) => {
+          setTimeout(() => resolve({ name: "Pepperoni" }), 1000);
+        });
+
+      //async 함수 선언
+      async function deliverPizza() {
+        try {
+          //순차 실행
+          const order = await orderPizza();
+          const dough = await makeDough();
+          const pizza = await bakePizza();
+        } catch (err) {
+          console.error("배달 실패!:", err);
+        } finally {
+          console.log(`배달 완료!`);
+        }
+      }
+
+      //함수 실행
+      deliverPizza();
+    </script>
+  </body>
+</html>
