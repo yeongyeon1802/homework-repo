@@ -54,6 +54,7 @@
           input.value = ""; //입력 후 칸 비우기
         });
 
+        //버튼 클릭시 삭제 이벤트
         removeBtn.addEventListener("click", function () {
           todos.pop(); //push() = 배열의 끝에서 삭제
           localStorage.setItem("todos", JSON.stringify(todos)); //로컬 스토리지 저장
