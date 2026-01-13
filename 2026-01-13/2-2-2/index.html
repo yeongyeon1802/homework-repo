@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2-2-2</title>
+  </head>
+  <body>
+    <script>
+      //문자열 뒤집기
+      function reverse(str) {
+        return str.split("").reverse().join("");
+      }
+
+      //숫자 3자리 패딩
+      function padThree(num) {
+        return String(num).padStart(3, "0");
+      }
+
+      //특정 문자 삭제
+      function removeAll(str, char) {
+        return str.replaceAll(char, "");
+      }
+
+      console.log(reverse("hello"));
+      console.log(padThree(5));
+      console.log(removeAll("banana", "a"));
+    </script>
+  </body>
+</html>
