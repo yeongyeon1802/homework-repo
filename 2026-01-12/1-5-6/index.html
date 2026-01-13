@@ -93,7 +93,7 @@
         }
 
         //버튼 클릭시 초기화 함수 생성
-        function removeTodo() {
+        function resetTodo() {
           todos = []; //배열 초기화
           localStorage.removeItem("todos"); //로컬 스토리지에서 삭제
           render(); // 화면 업데이트
@@ -103,7 +103,7 @@
         addBtn.addEventListener("click", addTodo);
 
         //버튼 클릭시 초기화 이벤트
-        resetBtn.addEventListener("click", removeTodo);
+        resetBtn.addEventListener("click", resetTodo);
 
         //엔터키 입력시 추가 이벤트
         input.addEventListener("keydown", function (e) {
