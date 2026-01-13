@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //합계를 출력하는 함수
+      function sum(num) {
+        //합을 저장할 변수 초기화
+        let total = 0;
+
+        //1부터 n 까지의 합 구하기
+        for (let i = 1; i <= num; i++) {
+          total += i;
+        }
+
+        //합계 반환
+        return total;
+      }
+
+      //짝수 합계를 출력하는 함수
+      function sumEven(num) {
+        //합을 저장할 변수 초기화
+        let total = 0;
+
+        //1부터 n 까지의 합 구하기
+        for (let i = 1; i <= num; i++) {
+          //i % 2 가 0, 즉 짝수일 경우 숫자 더하기
+          if (i % 2 === 0) {
+            total += i;
+          }
+        }
+
+        //합계 반환
+        return total;
+      }
+
+      //홀수 합계를 출력하는 함수
+      function sumOdd(num) {
+        //합을 저장할 변수 초기화
+        let total = 0;
+
+        //1부터 n 까지의 합 구하기
+        for (let i = 1; i <= num; i++) {
+          //i % 2 가 1, 즉 홀수일 경우 숫자 더하기
+          if (i % 2 === 1) {
+            total += i;
+          }
+        }
+
+        //합계 반환
+        return total;
+      }
+
+      console.log(sum(10));
+      console.log(sumEven(10));
+      console.log(sumOdd(10));
+    </script>
+  </body>
+</html>

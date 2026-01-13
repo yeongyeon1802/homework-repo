@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2-2-1</title>
+  </head>
+  <body>
+    <script>
+      //배열 생성
+      const numbers = [5, 12, 8, 130, 44, 3];
+
+      //배열 메서드로 데이터 가공
+      const newNumbers = numbers
+        //10 이상인 수만 필터링
+        .filter((n) => n >= 10)
+        //필터링된 배열 숫자 2배로 변환
+        .map((n) => n * 2)
+        //오름차순 정렬
+        .sort((a, b) => a - b);
+
+      //변경된 배열 출력
+      console.log(newNumbers);
+    </script>
+  </body>
+</html>
