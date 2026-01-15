@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3-3-3</title>
+  </head>
+  <body>
+    <script>
+      async function getPosts() {
+        try {
+          //서버에 데이터 요청
+          const posts = await fetch("https://jsonplaceholder.typicode.com/posts");
+
+          //성공 여부 확인
+          if (!posts.ok) {
+            //실패시 에러 발생
+            throw new Error(`API 요청 실패: ${posts.status}`);
+          }
+          //받아온 데이터 JSON으로 변환
+          const data = await posts.json();
+          console.log(data);
+        } catch (error) {
+          console.error(`에러 발생: ${error.message}`);
+          alert("데이터를 불러오는데 실패했습니다.");
+        }
+      }
+
+      getPosts();
+    </script>
+  </body>
+</html>
