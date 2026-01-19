@@ -66,6 +66,15 @@ button {
   background-color: rgba(255, 255, 255, 0.6);
   border: 1px solid #333;
   border-radius: 4px;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#todo-input:focus {
+  border-color: #9d4ccc;
+  box-shadow: 0 0 8px rgba(157, 76, 204, 0.2);
+  outline: none;
 }
 
 #todo-list {
