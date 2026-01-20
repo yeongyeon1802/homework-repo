@@ -35,13 +35,14 @@ function createTodoItem(todo, index) {
     //삭제전 확인
     if (confirm("정말 삭제할까요?")) {
       //투명화 클래스 삭제(세부 애니메이션 CSS 구현 완료)
-      li.classList.remove("block");
+      li.classList.add("deleting");
       //애니메이션이 끝날때까지 기다리기
       setTimeout(function () {
-        todos = todos.filter((_, i) => i !== index); //내가 현재 클릭한 index와 같지 않은 요소만 남기기
+        li.style.display = "none";
+        todos.splice(index, 1);
         localStorage.setItem("todos", JSON.stringify(todos)); //로컬 스토리지 업데이트
         render(); // 렌더링
-      }, 300);
+      }, 600);
     }
   });
   //요소 추가
@@ -84,7 +85,7 @@ function addTodo() {
   //서서히 나타나는 애니메이션(세부 애니메이션 CSS 구현 완료)
   setTimeout(function () {
     newLi.classList.add("block");
-  }, 0);
+  }, 10);
   input.value = ""; //입력 후 칸 비우기
   input.focus(); //바로 타이핑 가능하게 하기
 }

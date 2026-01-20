@@ -80,7 +80,6 @@ button {
 #todo-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
 }
 
 .todo-element {
@@ -89,19 +88,36 @@ button {
   width: 350px;
   height: 50px;
   padding: 15px;
+  margin-bottom: 6px;
   background-color: #b9e0fd;
   border-radius: 8px;
   border: 1px solid #333;
   opacity: 0;
   visibility: hidden;
+  overflow: hidden;
   transition:
     opacity 0.3s ease-in-out,
-    visibility 0.3s;
+    height 0.3s ease 0.3s;
 }
 
 .block {
+  height: 50px;
+  padding: 15px;
   opacity: 1;
   visibility: visible;
+}
+
+.deleting {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease-in-out,
+    height 0.3s ease 0.3s,
+    margin-bottom 0.3s ease 0.3s;
 }
 
 .todo-text {
