@@ -88,23 +88,20 @@ button {
   align-items: center;
   width: 350px;
   height: 50px;
-  padding: 8px;
+  padding: 15px;
   background-color: #b9e0fd;
   border-radius: 8px;
   border: 1px solid #333;
   opacity: 0;
   visibility: hidden;
   transition:
-    opacity 0.3s ease,
+    opacity 0.3s ease-in-out,
     visibility 0.3s;
 }
 
 .block {
   opacity: 1;
   visibility: visible;
-  transition:
-    opacity 0.3s ease,
-    visibility 0.3s;
 }
 
 .todo-text {
