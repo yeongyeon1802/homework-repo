@@ -1,6 +1,5 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Card from "./components/Card";
+import ProfileCard from "./components/ProfileCard";
+import Post from "./components/Post";
 import "./index.css";
 
 function App() {
@@ -8,26 +7,30 @@ function App() {
     <>
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
           width: "100%",
           height: "100vh",
-          padding: "32px",
-          background: "linear-gradient(45deg, #F0F9FF 0%, #94B3C7 100%)",
+          background: "linear-gradient(to right, #e0c3fc 0%, #8ec5fc 100%)",
         }}
       >
-        <Header />
-        <main
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+          }}
+        >
+          <ProfileCard name="철수" age={20} job="학생" />
+          <ProfileCard name="영희" age={24} job="개발자" />
+        </div>
+        <div
           style={{
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
+            gap: "32px",
           }}
         >
-          <Card />
-        </main>
-        <Footer />
+          <Post author="철수" content="저는 학생입니다." />
+          <Post author="영희" content="저는 개발자 입니다." />
+        </div>
       </div>
     </>
   );
