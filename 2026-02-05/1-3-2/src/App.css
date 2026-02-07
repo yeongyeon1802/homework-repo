@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 400px;
+  height: 400px;
+  margin: 100px auto;
+  padding: 32px;
+  border: 1px solid #333;
+  border-radius: 16px;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  height: 24px;
+}
+
+button {
+  width: 100px;
+  height: 24px;
+}
+
+label {
+  display: flex;
+  gap: 16px;
+}
+
+.email-box {
+  display: flex;
+  gap: 16px;
+}
+
+.password-box {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.agree-check {
+  width: 22px;
+  height: 22px;
+}
