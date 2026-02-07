@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  height: 100vh;
+  perspective: 1000px;
+}
+
+.card {
+  width: 400px;
+  height: 200px;
+  border: 1px solid #333;
+  border-radius: 16px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.front,
+.back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  cursor: pointer;
+}
+
+.front {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px;
+}
+
+.back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transform: rotateY(180deg);
+}
+
+.skill-list {
+  display: flex;
+  gap: 8px;
+}
+
+.skills {
+  display: block;
+  background-color: #777;
+  color: #ddd;
+  border-radius: 8px;
+  padding: 2px 8px;
+}
+
+.button-box {
+  display: flex;
+  justify-content: right;
+}
+
+.heart-button {
+  font-size: 40px;
+  background-color: #fff;
+  border: none;
+  color: #ff5252;
+  cursor: pointer;
+}
