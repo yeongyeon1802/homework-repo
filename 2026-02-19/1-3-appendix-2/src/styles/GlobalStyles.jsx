@@ -1,0 +1,84 @@
+import { Global, css } from "@emotion/react";
+
+const globalStyles = css`
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  div,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  img,
+  ul,
+  ol,
+  li,
+  form,
+  fieldset,
+  label,
+  legend,
+  input,
+  textarea,
+  button,
+  table,
+  caption,
+  tbody,
+  thead,
+  tfoot,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  section,
+  header,
+  main,
+  nav,
+  footer {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: "Pretendard", sans-serif;
+  }
+
+  html {
+    min-height: 100dvh;
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  ol,
+  ul {
+    list-style: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    background-color: transparent;
+    cursor: pointer;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+`;
+
+export const GlobalStyle = () => <Global styles={globalStyles} />;
